@@ -6,15 +6,28 @@ namespace LeapYearKata.Test {
         public void Setup() {
         }
 
+        #region Los años divisibles por 4 son bisiestos  
         [Test]
         [TestCase(4)]
         [TestCase(8)]
         [TestCase(12)]
-        [TestCase(16)]
-        //Los años divisibles por 4 son bisiestos    
-        public void be_divisible_by_4(int year) {       
+        [TestCase(16)]      
+        public void return_true_if_is_divisible_by_4(int year) {       
             var leapYear = new LeapYear();
+
+            Assert.AreEqual(true, leapYear.IsDivisibleBy4(year));
+        }  
+        [Test]
+        [TestCase(5)]
+        [TestCase(9)]
+        [TestCase(13)]
+        [TestCase(17)]
+        //Los años divisibles por 4 son bisiestos    
+        public void return_false_if_is_not_divisible_by_4(int year) {       
+            var leapYear = new LeapYear();
+
             Assert.AreEqual(false, leapYear.IsDivisibleBy4(year));
         }
+        #endregion
     }
 }
