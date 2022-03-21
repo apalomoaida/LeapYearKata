@@ -15,7 +15,7 @@ namespace LeapYearKata {
             return year % 4 == 0;
         }      
         public bool IsDivisibleBy100() {
-            return true;
+            return false;
         }
     }
 }
