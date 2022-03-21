@@ -10,7 +10,7 @@ namespace LeapYearKata {
 
         }
         public bool IsDivisibleBy4(int year) {
-            return true;
+            return year % 4 == 0;
         }
     }
 }

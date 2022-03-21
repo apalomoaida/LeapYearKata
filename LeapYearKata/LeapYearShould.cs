@@ -22,7 +22,6 @@ namespace LeapYearKata.Test {
         [TestCase(9)]
         [TestCase(13)]
         [TestCase(17)]
-        //Los años divisibles por 4 son bisiestos    
         public void return_false_if_is_not_divisible_by_4(int year) {       
             var leapYear = new LeapYear();
 
