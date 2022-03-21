@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using FluentAssertions;
 
 namespace LeapYearKata.Test {
     public class LeapYearShould {
@@ -8,7 +9,7 @@ namespace LeapYearKata.Test {
             
         }
 
-        #region Los años divisibles por 4 son bisiestos  
+        #region Los años no divisibles por 4 NO son bisiestos  
         [Test]
         [TestCase(4)]
         [TestCase(8)]
@@ -16,7 +17,6 @@ namespace LeapYearKata.Test {
         [TestCase(16)]      
         public void return_true_if_is_divisible_by_4(int year) {       
             var leapYear = new LeapYear(year);
-
             Assert.AreEqual(true, leapYear.IsDivisibleBy4());
         }  
         [Test]
@@ -28,6 +28,18 @@ namespace LeapYearKata.Test {
             var leapYear = new LeapYear(year);
 
             Assert.AreEqual(false, leapYear.IsDivisibleBy4());
+          
+        }
+        #endregion
+        #region Los años divisibles por 4 perro no por 100 son bisiestos 
+        [Test]
+        [TestCase(44)]
+        [TestCase(88)]
+        public void return_true_if_is_divisible_by_4_and_not_by_100(int year) {
+            var leapYear = new LeapYear(year);
+
+            leapYear.IsDivisibleBy4().Should().BeTrue();
+            leapYear.IsDivisibleBy100().Should().BeFalse();            
         }
         #endregion
     }
