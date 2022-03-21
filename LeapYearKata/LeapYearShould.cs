@@ -17,8 +17,9 @@ namespace LeapYearKata.Test {
         [TestCase(16)]      
         public void return_true_if_is_divisible_by_4(int year) {       
             var leapYear = new LeapYear(year);
-            Assert.AreEqual(true, leapYear.IsDivisibleBy4());
+            leapYear.IsDivisibleBy4().Should().BeTrue();
         }  
+
         [Test]
         [TestCase(5)]
         [TestCase(9)]
@@ -27,19 +28,27 @@ namespace LeapYearKata.Test {
         public void return_false_if_is_not_divisible_by_4(int year) {       
             var leapYear = new LeapYear(year);
 
-            Assert.AreEqual(false, leapYear.IsDivisibleBy4());
+            leapYear.IsDivisibleBy4().Should().BeFalse();
           
         }
         #endregion
-        #region Los años divisibles por 4 perro no por 100 son bisiestos 
+        #region Los años divisibles por 4 pero no por 100 son bisiestos 
         [Test]
         [TestCase(44)]
         [TestCase(88)]
-        public void return_true_if_is_divisible_by_4_and_not_by_100(int year) {
+        public void be_divisible_by_4_and_not_by_100(int year) {
             var leapYear = new LeapYear(year);
 
             leapYear.IsDivisibleBy4().Should().BeTrue();
             leapYear.IsDivisibleBy100().Should().BeFalse();            
+        }  
+        [Test]
+        [TestCase(400)]        
+        public void four_hundred_is_divisible_by_4_and_divisible_by_100(int year) {
+            var leapYear = new LeapYear(year);
+
+            leapYear.IsDivisibleBy4().Should().BeTrue();
+            leapYear.IsDivisibleBy100().Should().BeTrue();            
         }
         #endregion
     }
