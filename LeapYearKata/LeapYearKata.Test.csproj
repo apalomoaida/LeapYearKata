@@ -18,4 +18,10 @@
     <ProjectReference Include="..\LeapYear\LeapYearKata.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="FluentAssertions">
+      <HintPath>dll\FluentAssertions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
