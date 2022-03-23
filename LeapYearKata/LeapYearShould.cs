@@ -63,6 +63,19 @@ namespace LeapYearKata.Test {
             leapYear.IsDivisibleBy100().Should().BeTrue();
             leapYear.IsDivisibleBy400().Should().BeFalse();
         }
+        #endregion 
+        
+        #region Los años divisibles por 400 son bisiestos
+
+        [Test]
+        [TestCase(400)]
+        public void be_divisible_by_400(int year) {
+            var leapYear = new LeapYear(year);
+
+            leapYear.IsDivisibleBy400().Should().BeTrue();
+        }
         #endregion
+
+
     }
 }
