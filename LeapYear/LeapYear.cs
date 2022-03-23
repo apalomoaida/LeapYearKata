@@ -9,10 +9,14 @@ namespace LeapYearKata {
         private readonly int year;
         public bool IsLeapYear {
             get {
-                return  !(!IsDivisibleBy4())
-                        && (IsDivisibleBy4() && !IsDivisibleBy100())
-                        && !(IsDivisibleBy100() && !IsDivisibleBy400())
-                        || (IsDivisibleBy400());
+                var divisibleBy4 = IsDivisibleBy4();
+                var divisibleBy4ButNot100 = (IsDivisibleBy4() && !IsDivisibleBy100());
+                var divisibleBy100ButNot400 = (IsDivisibleBy100() && !IsDivisibleBy400());
+                var divisibleBy400 = IsDivisibleBy400();
+                return  !(!divisibleBy4)
+                        && (divisibleBy4ButNot100)
+                        && !(divisibleBy100ButNot400)
+                        || (divisibleBy400);
             }
         }
         public LeapYear(int year) {
