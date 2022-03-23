@@ -32,6 +32,7 @@ namespace LeapYearKata.Test {
           
         }
         #endregion
+
         #region Los años divisibles por 4 pero no por 100 son bisiestos 
         [Test]
         [TestCase(44)]
@@ -49,6 +50,18 @@ namespace LeapYearKata.Test {
 
             leapYear.IsDivisibleBy4().Should().BeTrue();
             leapYear.IsDivisibleBy100().Should().BeTrue();            
+        }
+        #endregion
+
+        #region Los años divisibles por 100 pero no por 400 NO son bisiestos
+
+        [Test]
+        [TestCase(1800)]
+        public void not_leapYear_if_is_divisible_by_100_and_not_by_400(int year) {
+            var leapYear = new LeapYear(year);
+
+            leapYear.IsDivisibleBy100().Should().BeTrue();
+            leapYear.IsDivisibleBy400().Should().BeFalse();
         }
         #endregion
     }
