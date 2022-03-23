@@ -15,7 +15,7 @@ namespace LeapYearKata.Test {
         [TestCase(8)]
         [TestCase(12)]
         [TestCase(16)]      
-        public void return_true_if_is_divisible_by_4(int year) {       
+        public void be_divisible_by_4(int year) {       
             var leapYear = new LeapYear(year);
             leapYear.IsDivisibleBy4().Should().BeTrue();
         }  
