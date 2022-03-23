@@ -4,11 +4,6 @@ using FluentAssertions;
 namespace LeapYearKata.Test {
     public class LeapYearShould {
        
-        [SetUp]
-        public void Setup() {
-            
-        }
-
         #region Los años no divisibles por 4 NO son bisiestos  
         [Test]
         [TestCase(4)]
@@ -89,7 +84,6 @@ namespace LeapYearKata.Test {
             leapYear.IsLeapYear.Should().BeTrue();
         }
         #endregion
-
 
     }
 }
