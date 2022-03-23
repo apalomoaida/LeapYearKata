@@ -1,10 +1,6 @@
 
-LeapYear/obj/
+.vs/
 
-LeapYearKata/.vs/
+bin/
 
-LeapYearKata/bin/
-
-LeapYearKata/obj/
-
-LeapYear/bin/
+obj/
